@@ -1,56 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Semantic Tables and Media</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Table and Media</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light background */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            max-width: 600px; /* Limit table width for better readability */
+            border-collapse: collapse; /* Collapse borders between cells */
+            margin-bottom: 40px; /* Space below the table */
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Rounded corners for the table */
+            overflow: hidden; /* Ensures shadow/border-radius applies correctly */
+        }
+
+        th, td {
+            border: 1px solid #dee2e6; /* Light gray border */
+            padding: 12px 15px; /* Padding inside cells */
+            text-align: left; /* Align text to the left */
+        }
+
+        thead th {
+            background-color: #007bff; /* Blue header background */
+            color: white; /* White text for header */
+            font-weight: bold;
+            padding: 15px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2; /* Zebra striping for rows */
+        }
+
+        tbody tr:hover {
+            background-color: #e9ecef; /* Hover effect on rows */
+        }
+
+        /* Heading between table and list */
+        .section-heading {
+            color: #343a40;
+            margin: 40px 0 25px 0; /* Top, right/left, bottom margins */
+            font-size: 28px;
+            text-align: center;
+            width: 100%;
+            max-width: 600px; /* Align with table width */
+        }
+
+        /* Ordered List Styling */
+        ol {
+            list-style: decimal; /* Decimal numbering */
+            width: 100%;
+            max-width: 600px; /* Limit list width */
+            padding-left: 20px; /* Indent list items */
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+
+        ol li {
+            margin-bottom: 20px; /* Space between list items */
+            color: #495057;
+            display: flex; /* Use flexbox for consistent spacing */
+            flex-direction: column; /* Stack image/video/audio within list item */
+            align-items: flex-start; /* Align content to the start */
+            gap: 10px; /* Space between the item's label and media */
+        }
+
+        ol li:last-child {
+            margin-bottom: 0; /* No margin after the last list item */
+        }
+
+        /* Media element styling */
+        img {
+            max-width: 100%; /* Ensure image is responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            display: block; /* Remove extra space below image */
+        }
+
+        video, audio {
+            width: 100%; /* Make video/audio players take full width */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 650px) {
+            table, ol {
+                margin-left: 10px;
+                margin-right: 10px;
+                width: calc(100% - 20px); /* Adjust for padding on small screens */
+            }
+            body {
+                padding: 10px;
+            }
+            .section-heading {
+                font-size: 24px;
+            }
+            th, td {
+                padding: 10px;
+                font-size: 14px;
+            }
+            ol li {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Semantic Table -->
-  <table>
-    <thead>
-      <tr>
-        <th>Roll Number</th>
-        <th>Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>101</td>
-        <td>Alice</td>
-      </tr>
-      <tr>
-        <td>102</td>
-        <td>Bob</td>
-      </tr>
-      <tr>
-        <td>103</td>
-        <td>Charlie</td>
-      </tr>
-    </tbody>
-  </table>
+    <!-- Semantic Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Roll Number</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Alice Smith</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Bob Johnson</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Charlie Brown</td>
+            </tr>
+        </tbody>
+    </table>
 
-  <!-- Required Heading -->
-  <h2>List of medias</h2>
+    <!-- Heading between table and list -->
+    <h2 class="section-heading">List of medias</h2>
 
-  <!-- Ordered List of Media -->
-  <ol>
-    <li>
-      <img src="https://picsum.photos/id/123/200/300" alt="Sample placeholder image">
-    </li>
-    <li>
-      <video controls>
-        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </li>
-    <li>
-      <audio controls>
-        <source src="http://commondatastorage.googleapis.com/codeskulptor-assets/Epoq-Lepidoptera.ogg" type="audio/ogg">
-        Your browser does not support the audio element.
-      </audio>
-    </li>
-  </ol>
+    <!-- Ordered List of Media -->
+    <ol>
+        <li>
+            <h3>Image Example:</h3>
+            <img src="https://picsum.photos/id/123/200/300" alt="Random image showing a mountain landscape with a lake." onerror="this.onerror=null;this.src='https://placehold.co/200x300/e0e0e0/000000?text=Image+Missing';">
+        </li>
+        <li>
+            <h3>Video Example:</h3>
+            <video controls>
+                <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </li>
+        <li>
+            <h3>Audio Example:</h3>
+            <audio controls src="http://commondatastorage.googleapis.com/codeskulptor-assets/Epoq-Lepidoptera.ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </li>
+    </ol>
 
 </body>
 </html>
